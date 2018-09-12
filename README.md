@@ -1,4 +1,8 @@
-## Ejercicios Scripting
+# ASR-2018
+
+## 2. Introducción a Shell Scripting
+
+### Ejercicios Scripting
 #### 1. Averigua cuál es el intérprete de comandos por defecto en tu sistema.
 ``` 
 echo $0
@@ -22,18 +26,16 @@ ls -l /etc > file.tmp
 
 
 
-## Apuntes
+### Apuntes
 $0 es el nombre el del programa/script que se esta ejecutando
 
 el caracter ```~``` el interprete de comandos lo sustituye por direcotorio padre. Es un metacaracter
 
 el caracter ```*``` el interprete de comandos busca elementos con el patron de caracteres especificado despues de del metacaracter(```*```)
 
-el comando ```touch``` si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
-
-
 Tabla de comandos:
-cat imprime el contenido de un fichero en la salida estandar
 
-
-
+Comando | Info
+---|---
+cat | imprime el contenido de un fichero en la salida estandar
+touch | si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
