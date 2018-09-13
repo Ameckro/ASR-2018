@@ -72,11 +72,11 @@ Tabla de comandos:
 
 
 Comando | Flags | Info
----|--- | ---
-cat |  | imprime el contenido de un fichero en la salida estandar
-touch |  | si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
-time |  |muestra el tiempo de ejecucion de un script. el tiempo que muestra se divide en dos. el tiempo "user" es el tiempo computable al estado "run", el tiempo "sys, corresponde al tiempo que se encuentran en otros estados 
-ps |  |muestra los porocesos activos
-jobs |  |muestra las tareas (no procesos) de fondo de una misma sesion de terminal. Para cambiar entre las tareas que estan en forground y el background usamos los comandos ```fg``` y ```bg```
-ls | -a  | muestra los ficheros que empiezan por ```.```    | 
-  | -l  | formato largo
+--------|-------| ---
+cat     |       | imprime el contenido de un fichero en la salida estandar
+touch   |       | si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
+time    |       |muestra el tiempo de ejecucion de un script. el tiempo que muestra se divide en dos. el tiempo "user" es el tiempo computable al estado "run", el tiempo "sys, corresponde al tiempo que se encuentran en otros estados 
+ps      |       |muestra los porocesos activos
+jobs    |       |muestra las tareas (no procesos) de fondo de una misma sesion de terminal. Para cambiar entre las tareas que estan en forground y el background usamos los comandos ```fg``` y ```bg```
+ls      |-a     | muestra los ficheros que empiezan por ```.```    | 
+        |-l     | formato largo
