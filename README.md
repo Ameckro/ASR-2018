@@ -1,4 +1,6 @@
 # ASR-2018
+- [E/S](#headers)
+
 
 ## 2. Introducción a Shell Scripting
 
@@ -39,6 +41,7 @@ Un terminal es una interfaz, un dispositivo de entrada y salida con el que se co
 
 Existen variables en el interprete de comandos que se definen con ```$```. Existen dos tipos: vatiables de entorno (mayuscula) y variables locales (minuscula).
 
+<a name="headers"/>
 #### Redireccionamiento Entrada/Salida:
 - stdin: ```<```
 ```
