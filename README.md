@@ -2,6 +2,7 @@
 - [Introducción a Shell Scripting](#headers)
 
 <a name="headers"/>
+
 ## 2. Introducción a Shell Scripting
 
 ### Ejercicios Scripting
