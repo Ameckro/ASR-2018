@@ -26,7 +26,14 @@ exit
 ls -l /etc > file.tmp
 ```
 #### 4. Añade al Fichero del punto anterior los nombres de las entradas (contenido) del directorio /bin.
+```
+ls /bin >> file.tmp
+```
 
+#### 5.En una sola instrucción, guarda los nombres de las entradas (contenido) de los directorios /etc y /usr en el fichero file.tmp.
+```
+
+```
 
 
 ### Apuntes
@@ -36,7 +43,7 @@ El caracter ```~``` el interprete de comandos lo sustituye por el direcotorio de
 
 El caracter ```*``` el interprete de comandos busca elementos con el patron de caracteres especificado despues de del metacaracter(```*```)
 
-En el directorio ```/dev``` se almacenan los dispositivos del ordenador (pantalla, teclado, ...). El directorio ```/dev/null``` es un direcotio especial, en el que todo lo que se escribe, se pierde (se borra automaticamente).
+En el directorio ```/dev``` se almacenan los dispositivos del ordenador (pantalla, teclado, ...). El directorio ```/dev/null``` es un direcotio especial, en el que todo lo que se escribe, se pierde (se borra automaticamente). El directorio ```/dev/zero```, contiene cadenas de ```0``` (bytes, que pueden representar cadenas de caracteres). El directorio ```/dev/random```, genera bytes aleatorios (aunque se puede manipular para obtner unas cadenas con expresiones concretas)
 
 Un terminal es una interfaz, un dispositivo de entrada y salida con el que se comunica con un shell (bash, sh, dash, ...). Puede ser grafica o con comandos. Existen terminales virtuales como las conexiones ssh
 
@@ -67,16 +74,30 @@ El caracter ```;``` permite ejecutar varios comandos de manera secuencial, en un
 
 El caracter ```&``` se introduce al final de un comando, entrando en modo "spawn" lo que permite ejecutar otro comando,aunque el comando anterior no haya terminado
 
-Tabla de comandos:
+El caracter ```!``` es un comando que ejecuta el ultimo comando que coincida con el patron de caracteres que le preceden:
+Si tenemos el siguiente historial de comandos:
+```
+1 ls -l
+2 history
+```
+Si ejecutamos: ```!l ``` ejecutara el comando ```ls -l ```
 
+```cntrl+c``` abortar la ejecucion del programa (lo mata)
+```cntrl+z``` detener (pausar) la ejecucion del proceso
+```cntrl+d``` fin de la entrada estanda
+el comando ```stty``` nos permite cambiar esos atajos
+
+Tabla de comandos:
 
 
 Comando | Flags | Info
 --------|-------| ---
-cat     |       | imprime el contenido de un fichero en la salida estandar
-touch   |       | si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
+cat     |       |"concatenar" imprime el contenido de un fichero en la salida estandar concatenando (en caso de que hubiese), los ficheros pasados por los argumentos
+touch   |       |si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
 time    |       |muestra el tiempo de ejecucion de un script. el tiempo que muestra se divide en dos. el tiempo "user" es el tiempo computable al estado "run", el tiempo "sys, corresponde al tiempo que se encuentran en otros estados 
 ps      |       |muestra los porocesos activos
 jobs    |       |muestra las tareas (no procesos) de fondo de una misma sesion de terminal. Para cambiar entre las tareas que estan en forground y el background usamos los comandos ```fg``` y ```bg```
-ls      |-a     | muestra los ficheros que empiezan por ```.```   
-ls      |-l     | formato largo
+ls      |-a     |muestra los ficheros que empiezan por ```.```   
+ls      |-l     |formato largo
+wc      |       |"wordcount". Cuenta lineas, palabras, ...
+hisory  |       |muestra el historial de comandos de una sesion del terminal en orden 
