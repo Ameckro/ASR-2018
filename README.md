@@ -87,6 +87,8 @@ Si ejecutamos: ```!l ``` ejecutara el comando ```ls -l ```
 ```cntrl+d``` fin de la entrada estanda
 el comando ```stty``` nos permite cambiar esos atajos
 
+para terminar un proceso se usa el comando ```kill``` seguido del PID (que se obtiene del comando ```ps```). Tambien se pueden usar ciertas señales para ajustarn el comando ```kill -9 [ PID]```
+
 Tabla de comandos:
 
 
