@@ -102,4 +102,4 @@ jobs    |       |muestra las tareas (no procesos) de fondo de una misma sesion d
 ls      |-a     |muestra los ficheros que empiezan por ```.```   
 ls      |-l     |formato largo
 wc      |       |"wordcount". Cuenta lineas, palabras, ...
-hisory  |       |muestra el historial de comandos de una sesion del terminal en orden 
+history  |       |muestra el historial de comandos de una sesion del terminal en orden 
