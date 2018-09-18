@@ -1,10 +1,19 @@
 # ASR-2018
-- [Introducción a Shell Scripting](#headers)
+- [Introducción a Shell Scripting](#IntroScripting)
+  - [Ejercicios](#Ej2)
+  - [Conceptos Basicos](#ConceptosBasicos)
+  - [Redireccionamiento de Entrada/Salida](#RedireccionamientoES)
+  - [Trabajando con el Bash](#Bash)
+  - [Estructura de un Script](#EstructuraScript)
+- [Tabla de comandos](#TablaComandos)
+  
 
-<a name="headers"/>
+
+<a name="IntroScripting"/>
 
 ## 2. Introducción a Shell Scripting
 
+<a name="Ej2"/>
 ### Ejercicios Scripting
 #### 1. Averigua cuál es el intérprete de comandos por defecto en tu sistema.
 ``` 
@@ -35,8 +44,8 @@ ls /bin >> file.tmp
 
 ```
 
-
-### Apuntes
+<a name="ConceptosBasicos"/>
+### Conceptos basicos
 $0 es el nombre el del programa/script que se esta ejecutando
 
 El caracter ```~``` el interprete de comandos lo sustituye por el direcotorio del usuario. Es un metacaracter
@@ -49,6 +58,7 @@ Un terminal es una interfaz, un dispositivo de entrada y salida con el que se co
 
 Existen variables en el interprete de comandos que se definen con ```$```. Existen dos tipos: vatiables de entorno (mayuscula) y variables locales (minuscula).
 
+<a name="RedireccionamientoES"/>
 ### Redireccionamiento Entrada/Salida:
 - stdin: ```<```
 ```
@@ -70,6 +80,7 @@ ls no-existe 2> errores
 ls no-existe 2>> errores
 ```
 
+<a name="Bash"/>
 ### Trabajando con el interprete Bash
 El caracter ```;``` permite ejecutar varios comandos de manera secuencial, en una sola línea 
 
@@ -90,6 +101,7 @@ el comando ```stty``` nos permite cambiar esos atajos
 
 para terminar un proceso se usa el comando ```kill``` seguido del PID (que se obtiene del comando ```ps```). Tambien se pueden usar ciertas señales para ajustarn el comando ```kill -9 [ PID]```
 
+<a name="EstructuraScript"/>
 ### Estructura de un script 
 Un script esta compuesto por las siguientes partes:
 - **cabecera**: se suele empezar por: ```#!/bin/sh``` o  ```#!/bin/bash```. Con esto, el script se ejecutará con el IC indicado 
@@ -112,13 +124,13 @@ Puede que se necesiten permisos de ejecucion. En ese caso le daremos los permiso
 
 Se puede ejecutar un script de 3 formas:
 - con path absoluto: ```/home/user/bin/miScript.sh```
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15` desde el catalogo: ./ miScript.sh (Duda: que es el catalogo, como se añaden?)
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  desde el catalogo: ./ miScript.sh (Duda: que es el catalogo, como se añaden?)
  - configurando la variable de entrono PATH: miScript.sh
 
 Podemos definir distintios tipos de variables: locales, de entorno, parametros.
 
+<a name="TablaComandos"/>
 ## Tabla de comandos:
-
 
 Comando | Flags | Info
 --------|-------| ---
