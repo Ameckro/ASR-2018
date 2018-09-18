@@ -134,6 +134,7 @@ Se puede ejecutar un script de 3 formas:
  - configurando la variable de entrono PATH: miScript.sh
 
 Podemos definir distintios tipos de variables: locales, de entorno, parametros.
+___
 
 <a name="TablaComandos"/>
 
