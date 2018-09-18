@@ -49,7 +49,7 @@ Un terminal es una interfaz, un dispositivo de entrada y salida con el que se co
 
 Existen variables en el interprete de comandos que se definen con ```$```. Existen dos tipos: vatiables de entorno (mayuscula) y variables locales (minuscula).
 
-#### Redireccionamiento Entrada/Salida:
+### Redireccionamiento Entrada/Salida:
 - stdin: ```<```
 ```
 cat < fichero
@@ -70,6 +70,7 @@ ls no-existe 2> errores
 ls no-existe 2>> errores
 ```
 
+### Trabajando con el interprete Bash
 El caracter ```;``` permite ejecutar varios comandos de manera secuencial, en una sola línea 
 
 El caracter ```&``` se introduce al final de un comando, entrando en modo "spawn" lo que permite ejecutar otro comando,aunque el comando anterior no haya terminado
@@ -89,7 +90,34 @@ el comando ```stty``` nos permite cambiar esos atajos
 
 para terminar un proceso se usa el comando ```kill``` seguido del PID (que se obtiene del comando ```ps```). Tambien se pueden usar ciertas señales para ajustarn el comando ```kill -9 [ PID]```
 
-Tabla de comandos:
+### Estructura de un script 
+Un script esta compuesto por las siguientes partes:
+- **cabecera**: se suele empezar por: ```#!/bin/sh``` o  ```#!/bin/bash```. Con esto, el script se ejecutará con el IC indicado 
+- **descripción**
+- **sentencias**
+- **devolver el codigo de finalizacion**: En caso de que no haya error => ```exit 0```. En caso contrario ```exit cod_error```
+
+Ejemplo de un script completo:
+```
+#!/bin/bash
+# Un comentario random
+echo "test"
+exit 0
+```
+Para ejecutar un script:
+```sh miScript.sh```
+
+Puede que se necesiten permisos de ejecucion. En ese caso le daremos los permisos necesarios:
+```chmod +rx miScript.sh```
+
+Se puede ejecutar un script de 3 formas:
+- con path absoluto: ```/home/user/bin/miScript.sh```
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15` desde el catalogo: ./ miScript.sh (Duda: que es el catalogo, como se añaden?)
+ - configurando la variable de entrono PATH: miScript.sh
+
+Podemos definir distintios tipos de variables: locales, de entorno, parametros.
+
+## Tabla de comandos:
 
 
 Comando | Flags | Info
@@ -102,4 +130,4 @@ jobs    |       |muestra las tareas (no procesos) de fondo de una misma sesion d
 ls      |-a     |muestra los ficheros que empiezan por ```.```   
 ls      |-l     |formato largo
 wc      |       |"wordcount". Cuenta lineas, palabras, ...
-history  |       |muestra el historial de comandos de una sesion del terminal en orden 
+history |       |muestra el historial de comandos de una sesion del terminal en orden 
