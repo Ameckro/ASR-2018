@@ -1,9 +1,9 @@
 # ASR-2018
 - [Introducción a Shell Scripting](#IntroScripting)
   - [Ejercicios](#Ej2)
-      -[Pagina 9](#EjPag9)
-      -[Pagina 15](#EjPag15)
-      -[Pagina 19](#EjPag19)
+    - [Pagina 9](#EjPag9)
+    - [Pagina 15](#EjPag15)
+    - [Pagina 19](#EjPag19)
   - [Conceptos Basicos](#ConceptosBasicos)
   - [Redireccionamiento de Entrada/Salida](#RedireccionamientoES)
   - [Trabajando con el Bash](#Bash)
