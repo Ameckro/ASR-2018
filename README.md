@@ -140,14 +140,16 @@ ___
 
 ## Tabla de comandos:
 
-Comando | Flags | Info
---------|-------| ---
-cat     |       |"concatenar" imprime el contenido de un fichero en la salida estandar concatenando (en caso de que hubiese), los ficheros pasados por los argumentos
-touch   |       |si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
-time    |       |muestra el tiempo de ejecucion de un script. el tiempo que muestra se divide en dos. el tiempo "user" es el tiempo computable al estado "run", el tiempo "sys, corresponde al tiempo que se encuentran en otros estados 
-ps      |       |muestra los porocesos activos
-jobs    |       |muestra las tareas (no procesos) de fondo de una misma sesion de terminal. Para cambiar entre las tareas que estan en forground y el background usamos los comandos ```fg``` y ```bg```
-ls      |-a     |muestra los ficheros que empiezan por ```.```   
-ls      |-l     |formato largo
-wc      |       |"wordcount". Cuenta lineas, palabras, ...
-history |       |muestra el historial de comandos de una sesion del terminal en orden 
+
+Comando              | Flags | Info
+---------------------|-------| ---
+cat                  |       |"concatenar" imprime el contenido de un fichero en la salida estandar concatenando (en caso de que hubiese), los ficheros pasados por los argumentos
+touch                |       |si no existe un fichero, lo crea, y si existe, cambia la fecha de modificacion del mismo
+time                 |       |muestra el tiempo de ejecucion de un script. el tiempo que muestra se divide en dos. el tiempo "user" es el tiempo computable al estado "run", el tiempo "sys, corresponde al tiempo que se encuentran en otros estados 
+ps                   |       |muestra los porocesos activos
+jobs                 |       |muestra las tareas (no procesos) de fondo de una misma sesion de terminal. Para cambiar entre las tareas que estan en forground y el background usamos los comandos ```fg``` y ```bg```
+ls                   |-a     |muestra los ficheros que empiezan por ```.```   
+ls                   |-l     |formato largo
+wc                   |       |"wordcount". Cuenta lineas, palabras, ...
+history              |       |muestra el historial de comandos de una sesion del terminal en orden 
+ssh [usuer]@[ip]     |       |establece una conexion segura con una sesion remota
