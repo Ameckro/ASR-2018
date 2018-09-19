@@ -48,17 +48,20 @@ ls /bin >> file.tmp
 (pag 15)
 #### 1. Programar un script que muestre el nombre del script.
 ```
-
+#!/bin/bash
+# Programar un script que muestre el nombre del script.
+echo $0
+exit 0
 ```
 #### 2. ¿Dónde debería ser copiado el script para que se pueda ejecutar como cualquier comando del sistema (sin hacer referencia al directorio en el que está), como por ejemplo, $ ls?
 ```
-
+Deberia estar copiado en el directorio indicado en la variable de entorno PATH: /home/user/bin/
 ```
 #### 3. Programar un script que obtenga un texto (cualquiera) por la salida estándar y otro por la salida estándar de errores.
 ```
 
 ```
-#### 4. ModiVcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Vchero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
+#### 4. Modifcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Vchero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
 ```
 
 ```
@@ -66,17 +69,29 @@ ls /bin >> file.tmp
 (pag 19)
 #### 1. Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
 ```
-
+#!/bin/sh
+#  Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
+expr $1 + $2 + $3
+exit 0
 ```
 #### 2. Programa un script que calcula y muestra la suma de los números que recibe como parámetro. El número de parámetros no se conoce a priori.
 ```
+#!/bin/sh
+#  Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
+suma=0
+for i in $* 
+ do 
+  suma=`expr $suma + $i`
+ done  
 
+echo $suma
+exit 0
 ```
 #### 3. Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
 ```
 
 ```
-#### 4. Programa un script que muestre sólo los nombres de los Vcheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
+#### 4. Programa un script que muestre sólo los nombres de los Ficheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
 ```
 
 ```
