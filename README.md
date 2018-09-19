@@ -1,6 +1,9 @@
 # ASR-2018
 - [Introducción a Shell Scripting](#IntroScripting)
   - [Ejercicios](#Ej2)
+      -[Pagina 9](#EjPag9)
+      -[Pagina 15](#EjPag15)
+      -[Pagina 19](#EjPag19)
   - [Conceptos Basicos](#ConceptosBasicos)
   - [Redireccionamiento de Entrada/Salida](#RedireccionamientoES)
   - [Trabajando con el Bash](#Bash)
@@ -16,6 +19,9 @@
 <a name="Ej2"/>
 
 ### Ejercicios Scripting
+
+<a name="EjPag9"/>
+
 (pag 9)
 #### 1. Averigua cuál es el intérprete de comandos por defecto en tu sistema.
 ``` 
@@ -45,6 +51,9 @@ ls /bin >> file.tmp
 
 ```
 ---
+
+<a name="EjPag15"/>
+
 (pag 15)
 #### 1. Programar un script que muestre el nombre del script.
 ```
@@ -66,6 +75,9 @@ Deberia estar copiado en el directorio indicado en la variable de entorno PATH: 
 
 ```
 ---
+
+<a name="EjPag19"/>
+
 (pag 19)
 #### 1. Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
 ```
