@@ -138,7 +138,7 @@ ___
 
 <a name="TablaComandos"/>
 
-## Tabla de comandos:
+
 
 
 Comando              | Flags | Info
