@@ -138,6 +138,7 @@ ___
 
 <a name="TablaComandos"/>
 
+patata
 ## Tabla de comandos:
 
 Comando | Flags | Info
