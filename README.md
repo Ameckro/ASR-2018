@@ -24,13 +24,13 @@
 
 (pag 9)
 #### 1. Averigua cuál es el intérprete de comandos por defecto en tu sistema.
-``` 
+``` bash
 echo $0
 ```
 
 
 #### 2. Lanza sh desde el terminal, comprueba que realmente se está ejecutando y regresa al IC original.
-```
+```bash
 sh
 echo $0 
 exit
@@ -38,16 +38,16 @@ exit
 
 #### 3. Guarda los nombres de las entradas (contenido) del directorio /etc en el fichero de nombre file.tmp.
 
-``` 
+``` bash
 ls -l /etc > file.tmp
 ```
 #### 4. Añade al Fichero del punto anterior los nombres de las entradas (contenido) del directorio /bin.
-```
+```bash
 ls /bin >> file.tmp
 ```
 
 #### 5.En una sola instrucción, guarda los nombres de las entradas (contenido) de los directorios /etc y /usr en el fichero file.tmp.
-```
+```bash
 
 ```
 ---
@@ -56,7 +56,7 @@ ls /bin >> file.tmp
 
 (pag 15)
 #### 1. Programar un script que muestre el nombre del script.
-```
+```bash
 #!/bin/bash
 # Programar un script que muestre el nombre del script.
 echo $0
@@ -67,11 +67,11 @@ exit 0
 Deberia estar copiado en el directorio indicado en la variable de entorno PATH: /home/user/bin/
 ```
 #### 3. Programar un script que obtenga un texto (cualquiera) por la salida estándar y otro por la salida estándar de errores.
-```
+```bash
 
 ```
 #### 4. Modifcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Vchero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
-```
+```bash
 
 ```
 ---
@@ -80,14 +80,14 @@ Deberia estar copiado en el directorio indicado en la variable de entorno PATH: 
 
 (pag 19)
 #### 1. Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
-```
+```bash
 #!/bin/sh
 #  Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
 expr $1 + $2 + $3
 exit 0
 ```
 #### 2. Programa un script que calcula y muestra la suma de los números que recibe como parámetro. El número de parámetros no se conoce a priori.
-```
+```bash
 #!/bin/sh
 #  Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
 suma=0
@@ -100,7 +100,7 @@ echo $suma
 exit 0
 ```
 #### 3. Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
-```
+```bash
 #!/bin/sh
 #Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
 
@@ -114,7 +114,7 @@ echo $suma
 exit 0
 ```
 #### 4. Programa un script que muestre sólo los nombres de los Ficheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
-```
+```bash
 
 ```
 
