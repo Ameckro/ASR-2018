@@ -234,6 +234,6 @@ history              |       |muestra el historial de comandos de una sesion del
 ssh [usuer]@[ip]     |       |establece una conexion segura con una sesion remota
 eval                 |       |ejecutar un string como comando
 expr                 |       |evaluar expresiones aritmeticas
-read                 |       |leer del teclado
+read                 |       |
 grep                 |       |filtrar el primer string que contenga el segundo string: "aaa aa a " grep "a"
 who                  |       |devuelve los usuarios conectados
