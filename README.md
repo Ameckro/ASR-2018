@@ -89,7 +89,17 @@ exit 0
 ```
 #### 3. Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
 ```
+#!/bin/sh
+#Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
 
+read VAR
+suma=0
+for i in $VAR 
+ do 
+  suma=$((i+suma))
+ done  
+echo $suma
+exit 0
 ```
 #### 4. Programa un script que muestre sólo los nombres de los Ficheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
 ```
