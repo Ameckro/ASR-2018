@@ -16,7 +16,7 @@
 <a name="Ej2"/>
 
 ### Ejercicios Scripting
-
+(pag 9)
 #### 1. Averigua cuál es el intérprete de comandos por defecto en tu sistema.
 ``` 
 echo $0
@@ -30,7 +30,6 @@ echo $0
 exit
 ```
 
-
 #### 3. Guarda los nombres de las entradas (contenido) del directorio /etc en el fichero de nombre file.tmp.
 
 ``` 
@@ -42,6 +41,42 @@ ls /bin >> file.tmp
 ```
 
 #### 5.En una sola instrucción, guarda los nombres de las entradas (contenido) de los directorios /etc y /usr en el fichero file.tmp.
+```
+
+```
+---
+(pag 15)
+#### 1. Programar un script que muestre el nombre del script.
+```
+
+```
+#### 2. ¿Dónde debería ser copiado el script para que se pueda ejecutar como cualquier comando del sistema (sin hacer referencia al directorio en el que está), como por ejemplo, $ ls?
+```
+
+```
+#### 3. Programar un script que obtenga un texto (cualquiera) por la salida estándar y otro por la salida estándar de errores.
+```
+
+```
+#### 4. ModiVcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Vchero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
+```
+
+```
+---
+(pag 19)
+#### 1. Programa un script que calcula y muestra la suma de tres números que recibe como parámetro.
+```
+
+```
+#### 2. Programa un script que calcula y muestra la suma de los números que recibe como parámetro. El número de parámetros no se conoce a priori.
+```
+
+```
+#### 3. Como el anterior, pero en lugar de recibir los números como parámetros, los recibe a través del teclado.
+```
+
+```
+#### 4. Programa un script que muestre sólo los nombres de los Vcheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
 ```
 
 ```
@@ -130,10 +165,55 @@ Puede que se necesiten permisos de ejecucion. En ese caso le daremos los permiso
 
 Se puede ejecutar un script de 3 formas:
 - con path absoluto: ```/home/user/bin/miScript.sh```
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  desde el catalogo: ./ miScript.sh (Duda: que es el catalogo, como se añaden?)
- - configurando la variable de entrono PATH: miScript.sh
+- desde el direcorio actual ./ miScript.sh
+- configurando la variable de entrono PATH (```/home/user/bin/```): miScript.sh
 
 Podemos definir distintios tipos de variables: locales, de entorno, parametros.
+
+Una variable contiene una **cadena de caracteres**
+
+Para leer del teclado usamos el comando ```read VAR1 VAR2```
+
+Para obtener la lista de argumentos utilizaremos ```$*``` o ```$@```
+
+Para obtener el numero de argumentos utilizaremos ```$#```
+
+El comando ```expr``` resuelve operaciones aritméticas. Por ejemplo ```expr 2 + 3```. Para asignar el contenido de la expresion a una variable, se utiliza ```VAR = `expr 2 + 5` ```
+
+El comando ```eval```, evalua un string (lo ejecuta) 
+```
+FILE="/home/user1/file.txt"
+echo ${FILE#/home/}  # al utilizar la `#` elimina la primera aparicion de `/home/`
+
+```
+Comillas simple vs doble
+La comilla simple no interpreta el contenido del string:
+```
+A="Algo"
+B='$A'   #B tiene el string $A
+```
+La comilla doble si lo interpreta:
+```
+A="Algo"
+B="$A"   #B tiene el string Algo
+```
+ 
+El acento grave (``` ` ```), nos permite ejecutar un string como un comando en medio de otro sting:
+```
+echo "hola, estos son los procesos abiertos: `ps`"
+```
+
+Estructuras de Control:
+Si una condicion:
+  - se cumple => devuelve 0
+  - no se cumple => devuelve 1
+
+El comando test permite evaluar expresiones condicionales
+El doble ampersan (```&&```) se utiliza para hacer un if: ``` comando1 && comando2 === if comando1 then comando2 ``` 
+El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if comando1 !=0 then comando2 ``` 
+
+
+
 ___
 
 <a name="TablaComandos"/>
@@ -152,3 +232,8 @@ ls                   |-l     |formato largo
 wc                   |       |"wordcount". Cuenta lineas, palabras, ...
 history              |       |muestra el historial de comandos de una sesion del terminal en orden 
 ssh [usuer]@[ip]     |       |establece una conexion segura con una sesion remota
+eval                 |       |ejecutar un string como comando
+expr                 |       |evaluar expresiones aritmeticas
+read                 |       |leer del teclado
+grep                 |       |filtrar el primer string que contenga el segundo string: "aaa aa a " grep "a"
+who                  |       |devuelve los usuarios conectados
