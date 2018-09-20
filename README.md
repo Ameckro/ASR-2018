@@ -115,7 +115,15 @@ exit 0
 ```
 #### 4. Programa un script que muestre sólo los nombres de los Ficheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
 ```bash
-
+#!/bin/sh
+#Programa un script que muestre sólo los nombres de los Ficheros del directorio principal, es decir, sin la parte correspondiente al directorio en el que están ni la extensión. Ejemplo: /home/user/File1.txt ⇒ File1
+result=`find /home/*`
+for file in $result 
+ do 
+   trim=${file##*/}
+   echo ${trim##*.}
+ done
+exit 0
 ```
 
 <a name="ConceptosBasicos"/>
