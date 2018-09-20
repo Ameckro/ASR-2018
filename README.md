@@ -282,3 +282,7 @@ expr                 |       |evaluar expresiones aritmeticas
 read                 |       |
 grep                 |       |filtrar el primer string que contenga el segundo string: "aaa aa a " grep "a"
 who                  |       |devuelve los usuarios conectados
+tail                 |       |posicionarte al inicio del fichero, puedes no mostrar el inicio con ejemplo: ```ail --lines=+2```
+uniq                 |       | se utiliza para eliminar lineas repetidas y con ``` uniq -c``` te cuenta de cada tipo cuantas ha eliminado.
+sort                 |       | ordena las lineas alfabeticamente (posible uso: ordenar una lista por iguales)
+
