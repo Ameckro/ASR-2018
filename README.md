@@ -165,7 +165,7 @@ El caracter ```&``` se introduce al final de un comando, entrando en modo "spawn
 
 El caracter ```!``` es un comando que ejecuta el ultimo comando que coincida con el patron de caracteres que le preceden:
 Si tenemos el siguiente historial de comandos:
-```
+``` 
 1 ls -l
 2 history
 ```
@@ -188,7 +188,7 @@ Un script esta compuesto por las siguientes partes:
 - **devolver el codigo de finalizacion**: En caso de que no haya error => ```exit 0```. En caso contrario ```exit cod_error```
 
 Ejemplo de un script completo:
-```
+```bash
 #!/bin/bash
 # Un comentario random
 echo "test"
@@ -218,25 +218,25 @@ Para obtener el numero de argumentos utilizaremos ```$#```
 El comando ```expr``` resuelve operaciones aritméticas. Por ejemplo ```expr 2 + 3```. Para asignar el contenido de la expresion a una variable, se utiliza ```VAR = `expr 2 + 5` ```
 
 El comando ```eval```, evalua un string (lo ejecuta) 
-```
+```bash
 FILE="/home/user1/file.txt"
 echo ${FILE#/home/}  # al utilizar la `#` elimina la primera aparicion de `/home/`
 
 ```
 Comillas simple vs doble
 La comilla simple no interpreta el contenido del string:
-```
+```bash
 A="Algo"
 B='$A'   #B tiene el string $A
 ```
 La comilla doble si lo interpreta:
-```
+```bash
 A="Algo"
 B="$A"   #B tiene el string Algo
 ```
  
 El acento grave (``` ` ```), nos permite ejecutar un string como un comando en medio de otro sting:
-```
+```bash
 echo "hola, estos son los procesos abiertos: `ps`"
 ```
 
