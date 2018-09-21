@@ -11,6 +11,10 @@
 - [Tabla de comandos](#TablaComandos)
   
 
+## 1. Administración: fundamentos y herramientas
+
+Responsabilidad: Asegurar el correcto funcionamiento del sistema, así como la disponibilidad (24 horas), confidencialidad e integridad de los datos almacenados.
+
 
 <a name="IntroScripting"/>
 
@@ -222,6 +226,9 @@ Para leer del teclado usamos el comando ```read VAR1 VAR2```
 Para obtener la lista de argumentos utilizaremos ```$*``` o ```$@```
 
 Para obtener el numero de argumentos utilizaremos ```$#```
+
+En bash la variable ```$?``` almacena el resultado de la última operación realizada en el sistema
+
 
 El comando ```expr``` resuelve operaciones aritméticas. Por ejemplo ```expr 2 + 3```. Para asignar el contenido de la expresion a una variable, se utiliza ```VAR = `expr 2 + 5` ```
 
