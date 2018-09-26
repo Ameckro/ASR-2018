@@ -8,6 +8,8 @@
   - [Redireccionamiento de Entrada/Salida](#RedireccionamientoES)
   - [Trabajando con el Bash](#Bash)
   - [Estructura de un Script](#EstructuraScript)
+- [Gestion de recursos](#TablaComandos)
+  - [Sistema de ficheros](#TablaComandos)
 - [Tabla de comandos](#TablaComandos)
   
 
