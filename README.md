@@ -267,7 +267,11 @@ El doble ampersan (```&&```) se utiliza para hacer un if: ``` comando1 && comand
 El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if comando1 !=0 then comando2 ``` 
 
 
+Permiso de escritura de un directorio es el permiso de borrado,creado o modificado de ficheros de ese directorio.
+Permiso de ejecucion del directorio es para hacer cd o para acceder a un subdirectorio de ese direcotrio.
+Permiso de lectura del un directorio es ver su contenido.
 
+La mascara no guarda los permisos, es la mascara inversa. ejemplo 0000(en verdad seria 7777) todos los permisos(especiales-propietario-grupo-otros).
 ___
 
 <a name="TablaComandos"/>
@@ -294,4 +298,6 @@ who                  |       |devuelve los usuarios conectados
 tail                 |       |posicionarte al inicio del fichero, puedes no mostrar el inicio con ejemplo: ```ail --lines=+2```
 uniq                 |       | se utiliza para eliminar lineas repetidas y con ``` uniq -c``` te cuenta de cada tipo cuantas ha eliminado.
 sort                 |       | ordena las lineas alfabeticamente (posible uso: ordenar una lista por iguales)
+umask               |       | seguido del 3 numeros(777 ejemplo) para cambiar los permisos.Sin nada se ven los permisos del usuario, recordar que el numero tiene que ser el inverso al que queremos.
+
 
