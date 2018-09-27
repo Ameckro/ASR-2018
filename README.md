@@ -268,7 +268,9 @@ El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if coman
 
 
 Permiso de escritura de un directorio es el permiso de borrado,creado o modificado de ficheros de ese directorio.
+
 Permiso de ejecucion del directorio es para hacer cd o para acceder a un subdirectorio de ese direcotrio.
+
 Permiso de lectura del un directorio es ver su contenido.
 
 La mascara no guarda los permisos, es la mascara inversa. ejemplo 0000(en verdad seria 7777) todos los permisos(especiales-propietario-grupo-otros).
