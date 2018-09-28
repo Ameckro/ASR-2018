@@ -282,9 +282,9 @@ Con RAID(Redundant Array of Independent Disks), podemos almacenar una copia para
 
 Las particiones, permiten acceder mas rapido, pero producen fragmentacion. Son menos flexibles.
 
-Montar significa asignar/ubicar una particion a un direcotrio. Cuando se apaga una maquina, se desmontan los dicos. 
+Montar significa asignar/ubicar una particion a un direcotrio. Cuando se apaga una maquina, se desmontan los dicos. Cuando encendemos la maquina, los discos ya estan montados, eso es porque en el fichero ```/etc/fstab```, que contiene como se montan las particiones (esten o no montados)
 
-Las particiones se identifican (en el directorio ```/dev```)en kis ficheros sdb1, sdb2, ... .Tambien se puede identificar con el UUID (Univeraly Unique IDentifier). Tambien se almacena en el directorio ```/dev/disk```. El UUID tambien se usa para identificar software, como la MAC
+Las particiones se identifican (en el directorio ```/dev```)en kis ficheros sda 1, sdb2, ... .Tambien se puede identificar con el UUID (Univeraly Unique IDentifier). Tambien se almacena en el directorio ```/dev/disk```. El UUID tambien se usa para identificar software, como la MAC
 ___
 
 <a name="TablaComandos"/>
