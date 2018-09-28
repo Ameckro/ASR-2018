@@ -274,6 +274,17 @@ Permiso de ejecucion del directorio es para hacer cd o para acceder a un subdire
 Permiso de lectura del un directorio es ver su contenido.
 
 La mascara no guarda los permisos, es la mascara inversa. ejemplo 0000(en verdad seria 7777) todos los permisos(especiales-propietario-grupo-otros).
+
+Un sistema cuenta con discos. Esos discos se particionan porque de esa manera se puede hacer una mejor gestion. En linux, el comando que crea particiones es ```fdisk``` que hace que se creen nuevas entradas en la tabla de particiones. Siempre se tiene que hacer sobre discos que no esten en funcionamiento (que no esten montados). Sobre la particion (o el disco entero) se establece la estructura de ficheros (crear la estructura de ficheros o formato). En linux se formatea con ```mkfs```. Para asignar un disco sobre un directorio, es necesario que el directorio en que se quiere asignar el disco, este vacio. 
+
+En algunos casos, nos puede interesar tener un dico cifrado (se evita que desde otro ordenador accedieran remotamente)
+Con RAID(Redundant Array of Independent Disks), podemos almacenar una copia para que en caso de perdida del disco original, se pueda recuperar.
+
+Las particiones, permiten acceder mas rapido, pero producen fragmentacion. Son menos flexibles.
+
+Montar significa asignar/ubicar una particion a un direcotrio. Cuando se apaga una maquina, se desmontan los dicos. 
+
+Las particiones se identifican (en el directorio ```/dev```)en kis ficheros sdb1, sdb2, ... .Tambien se puede identificar con el UUID (Univeraly Unique IDentifier). Tambien se almacena en el directorio ```/dev/disk```. El UUID tambien se usa para identificar software, como la MAC
 ___
 
 <a name="TablaComandos"/>
