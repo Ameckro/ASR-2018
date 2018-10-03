@@ -285,6 +285,12 @@ Las particiones, permiten acceder mas rapido, pero producen fragmentacion. Son m
 Montar significa asignar/ubicar una particion a un direcotrio. Cuando se apaga una maquina, se desmontan los dicos. Cuando encendemos la maquina, los discos ya estan montados, eso es porque en el fichero ```/etc/fstab```, que contiene como se montan las particiones (esten o no montados)
 
 Las particiones se identifican (en el directorio ```/dev```)en kis ficheros sda 1, sdb2, ... .Tambien se puede identificar con el UUID (Univeraly Unique IDentifier). Tambien se almacena en el directorio ```/dev/disk```. El UUID tambien se usa para identificar software, como la MAC
+
+
+Un fichero ```core``` o de imagen, se genera cuando un programa aborta en modo desarrollador, donde se almacena el codigo del programa, la pila con el estado de las variables, los datos. Son ficheros muy grandes.
+
+El comando ```find``` tiene una opcion que es ```-mtimpe``` : fecha de modificacion ```-atime```: fecha de ultimo acceso.                tiene una opcion para permisos ```mode```: exactamente ese, ```-mode``` solo los que estan a 1, ```/mode``` es un or de permisos. 
+                      ```-o``` es un (or). Para poner un parentesis, se utiliza: ```\(``` y ```\)```. Para poner un ```;```, ponemos ```\;``` 
 ___
 
 <a name="TablaComandos"/>
