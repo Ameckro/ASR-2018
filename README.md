@@ -290,7 +290,27 @@ Las particiones se identifican (en el directorio ```/dev```)en kis ficheros sda 
 Un fichero ```core``` o de imagen, se genera cuando un programa aborta en modo desarrollador, donde se almacena el codigo del programa, la pila con el estado de las variables, los datos. Son ficheros muy grandes.
 
 El comando ```find``` tiene una opcion que es ```-mtimpe``` : fecha de modificacion ```-atime```: fecha de ultimo acceso.                tiene una opcion para permisos ```mode```: exactamente ese, ```-mode``` solo los que estan a 1, ```/mode``` es un or de permisos. 
-                      ```-o``` es un (or). Para poner un parentesis, se utiliza: ```\(``` y ```\)```. Para poner un ```;```, ponemos ```\;``` 
+                      ```-o``` es un (or). Para poner un parentesis, se utiliza: ```\(``` y ```\)```. Para poner un ```;```, ponemos ```\;```
+                      
+El entorno tiene definida una serie de variables.
+La variable PATH varia entre usuarios (admin-root y entre los usuarios ). En la variable LD_LIBRARY_PATH, contiene una lista de librerias dinamica compiladas para los usuarios
+
+El comando ```set``` muestra el contenido de las variables de entorno. 
+
+La variable PWD contiene el directorio actual (algunas apps, no modifican dicha variable cuando acceden a los directorios)
+La variable BASH contiene el directorio del terminal
+La variable LOGNAME contiene el nombre del usuario conectado
+
+Para asignar variables de entorno, usaremos el comando: ```export var``` o ```export var=5```.
+Las variables de entorno creadas por el padre, son heredadas por los hijos (Procesos)(Son una copia). Por ejemplo, si en el bash, abrimos sh, y preguntamos por una variable de entorno definida por el padre, funciona. Pero, si el hijo, crea una variable de entorno, el padre no la tiene.
+
+El comando ```witch``` o ```whereis``` busca un comando en la variable PATH y en el caso del ```whereis``` tambien en el man.
+
+Hay comandos, como el ```ls```, que usan un alias: ```alias ll='ls -al'```. Al ejecutar el comando ```ll``` ejecutará ```ls -al```. Al igual que las variables de entorno, los alias pueden ser locales, o de entorno. 
+
+Los ficheros start-up (o scripts), son los fihceros que se ejecutan cuando se hace login o en algun caso, al instalar algun problema. Tienen extensiones (```csh```,```*rc*```, ). Cada usuario tiene un shell asociado. Este shell esta definido el el fichero ```passwd``` como ultimo argumento. Cada usuario puede modificar sus ficheros de start-up y puede añadir nuevas variables de entorno o nuevos alias
+
+Si un hijo, quiere modificar una variable de entorno del padre, usara ```.``` o el comando interno del bash ```source```
 ___
 
 <a name="TablaComandos"/>
