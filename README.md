@@ -311,6 +311,12 @@ Hay comandos, como el ```ls```, que usan un alias: ```alias ll='ls -al'```. Al e
 Los ficheros start-up (o scripts), son los fihceros que se ejecutan cuando se hace login o en algun caso, al instalar algun problema. Tienen extensiones (```csh```,```*rc*```, ). Cada usuario tiene un shell asociado. Este shell esta definido el el fichero ```passwd``` como ultimo argumento. Cada usuario puede modificar sus ficheros de start-up y puede añadir nuevas variables de entorno o nuevos alias
 
 Si un hijo, quiere modificar una variable de entorno del padre, usara ```.``` o el comando interno del bash ```source```
+
+El fichero clave del directorio ```/etc``` es el fichero passwd, que contiene los usuarios instalados (1 liena por comando). El SO tiene definidos otros usuarios internos.
+Cada linea tiene la siguiente estructura: root(nombre):pass(si x entonces la pass esta en el fichero ```/etc/shadow```):id:grupo principal: idgrupo
+
+En el fichero ```/etc/shadow```, no solo contiene la contraseña, sino que tambien contiene cuando se creó la cuenta, si se le forzará cambiar la contraseña y cuando, si la cuenta caduca y cuando.   
+
 ___
 
 <a name="TablaComandos"/>
