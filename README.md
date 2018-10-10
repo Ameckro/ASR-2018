@@ -11,11 +11,6 @@
 - [Gestion de recursos](#TablaComandos)
   - [Sistema de ficheros](#TablaComandos)
 - [Tabla de comandos](#TablaComandos)
-  
-
-## 1. Administración: fundamentos y herramientas
-
-Responsabilidad: Asegurar el correcto funcionamiento del sistema, así como la disponibilidad (24 horas), confidencialidad e integridad de los datos almacenados.
 
 
 <a name="IntroScripting"/>
@@ -54,7 +49,7 @@ ls /bin >> file.tmp
 
 #### 5.En una sola instrucción, guarda los nombres de las entradas (contenido) de los directorios /etc y /usr en el fichero file.tmp.
 ```bash
-
+ls /etc > file.tmp; ls /usr >> file.tmp
 ```
 ---
 
@@ -76,7 +71,7 @@ Deberia estar copiado en el directorio indicado en la variable de entorno PATH: 
 ```bash
 
 ```
-#### 4. Modifcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Vchero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
+#### 4. Modifcar el script del punto anterior para que desde el interior del propio script redirija la salida estándar al Fichero “nombre-del-script-output.txt” y la de errores a “nombre-del-script-errors.txt”.
 ```bash
 
 ```
@@ -131,6 +126,99 @@ for file in $result
  done
 exit 0
 ```
+#### (pag 23) 1. Programa un script que compruebe que recibe dos parámetros.
+```bash
+#!/bin/sh
+#Programa un script que compruebe que recibe dos parámetros.
+if [ $# -eq 2 ] ; then
+  echo "hay dos parametros"
+else
+  echo "ERROR: no hay 2 parametros"
+fi
+exit 0
+```
+#### (pag 23) 2. script que recibe como parámetro dos números e indica cuál es el de mayor valor.
+```bash
+#!/bin/sh
+#script que recibe como parámetro dos números e indica cuál es el de mayor valor
+if [ $# -eq 2 ]
+  then if [ $1 -gt $2 ] 
+    then echo $1 
+    else echo $2
+  fi
+  else
+    echo "ERROR: no hay 2 parametros"
+    exit 1
+fi
+exit 0
+```
+
+#### (pag 23) 3. script que comprueba que el Fichero que recibe como parámetro existe
+```bash
+#!/bin/sh
+#script que comprueba que el Fichero que recibe como parámetro existe
+if [ $# -eq 1 ]
+  then if [ -f $1 ]
+    then echo "Existe el fichero"
+    else echo "No Existe"
+  fi
+  else echo "Parametros incorrectos"
+fi
+exit 0
+```
+
+#### (pag 23) 4. script que comprueba que el directorio que recibe como parámetro existe y después cuenta cuántos subdirectorios y cuántos ficheros contiene
+```bash
+#!/bin/sh
+#script que comprueba que el directorio que recibe como parámetro existe y después cuenta cuántos subdirectorios y cuántos ficheros contiene
+if [ $# -eq 1 ]
+  then if [ -d $1 ]
+    then 
+      contDir=0      
+			contFich=0
+      for fich in $1/*
+      do
+				if [ -d "$fich" ]
+	  			then contDir=$(($contDir + 1))
+				fi 
+				if [ -f "$fich" ]
+	  			then contFich=$(($contFich + 1))
+				fi        
+      done
+    echo "El directorio tiene $contDir subdirectorios"    
+		echo "El directorio tiene $contFich ficheros"
+    else echo "No Existe"
+  fi
+  else echo "Parametros incorrectos"
+fi
+exit 0
+```
+#### (pag 23) 5. Como en el caso anterior, pero contando el número de Ficheros con extensión txt
+```bash
+#!/bin/bash
+#Como en el caso anterior, pero contando el número de Ficheros con extensión txt
+if [ $# -eq 1 ]
+  then if [ -d $1 ]
+    then 
+			contFich=0
+      for fich in $1/*
+      do
+				if [ -f "$fich" ]
+	  			then if [ ${fich##*.} = "txt" ]
+						then contFich=$(($contFich + 1))
+					fi
+				fi        
+      done
+		echo "El directorio tiene $contFich ficheros .txt"
+    else echo "No Existe"
+  fi
+  else echo "Parametros incorrectos"
+fi
+exit 0
+```
+
+
+
 
 <a name="ConceptosBasicos"/>
 
@@ -316,8 +404,6 @@ El fichero clave del directorio ```/etc``` es el fichero passwd, que contiene lo
 Cada linea tiene la siguiente estructura: root(nombre):pass(si x entonces la pass esta en el fichero ```/etc/shadow```):id:grupo principal: idgrupo
 
 En el fichero ```/etc/shadow```, no solo contiene la contraseña, sino que tambien contiene cuando se creó la cuenta, si se le forzará cambiar la contraseña y cuando, si la cuenta caduca y cuando.   
-
-Proceso: Instancia de un programa en ejecución. Un proceso tiene 3 posibles estados: Arranque-parada-cancelación. Fork crea un proceso. Para identificar un proceso, se le da un ID. Un proceso puede comunicarse con otro proceso (o incluso a él mismo) con señales (signals), que por defecto, hace terminar un proceso. El comando ```kill```, termina el proceso que se le indique. Las señales mas comunes son ```SIGKILL```, ```SIGSTOP``` o ```SIGCONT```
 
 ___
 
