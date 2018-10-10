@@ -317,6 +317,8 @@ Cada linea tiene la siguiente estructura: root(nombre):pass(si x entonces la pas
 
 En el fichero ```/etc/shadow```, no solo contiene la contraseña, sino que tambien contiene cuando se creó la cuenta, si se le forzará cambiar la contraseña y cuando, si la cuenta caduca y cuando.   
 
+Proceso: Instancia de un programa en ejecución. Un proceso tiene 3 posibles estados: Arranque-parada-cancelación. Fork crea un proceso. Para identificar un proceso, se le da un ID. Un proceso puede comunicarse con otro proceso (o incluso a él mismo) con señales (signals), que por defecto, hace terminar un proceso. El comando ```kill```, termina el proceso que se le indique. Las señales mas comunes son ```SIGKILL```, ```SIGSTOP``` o ```SIGCONT```
+
 ___
 
 <a name="TablaComandos"/>
