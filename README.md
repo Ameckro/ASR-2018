@@ -178,12 +178,12 @@ if [ $# -eq 1 ]
 			contFich=0
       for fich in $1/*
       do
-				if [ -d "$fich" ]
-	  			then contDir=$(($contDir + 1))
-				fi 
-				if [ -f "$fich" ]
-	  			then contFich=$(($contFich + 1))
-				fi        
+	if [ -d "$fich" ]
+	then contDir=$(($contDir + 1))
+	fi 
+	if [ -f "$fich" ]
+	then contFich=$(($contFich + 1))
+	fi        
       done
     echo "El directorio tiene $contDir subdirectorios"    
 		echo "El directorio tiene $contFich ficheros"
@@ -203,13 +203,13 @@ if [ $# -eq 1 ]
 			contFich=0
       for fich in $1/*
       do
-				if [ -f "$fich" ]
-	  			then if [ ${fich##*.} = "txt" ]
-						then contFich=$(($contFich + 1))
-					fi
-				fi        
+	if [ -f "$fich" ]
+	then if [ ${fich##*.} = "txt" ]
+	  	then contFich=$(($contFich + 1))
+	     fi
+	fi        
       done
-		echo "El directorio tiene $contFich ficheros .txt"
+      echo "El directorio tiene $contFich ficheros .txt"
     else echo "No Existe"
   fi
   else echo "Parametros incorrectos"
@@ -217,6 +217,41 @@ fi
 exit 0
 ```
 
+#### (pag 23) 7. script que muestra cuántas extensiones diferentes hay en un directorio, junto con el número de ocurrencias de cada una. Ejemplo: 
+#### ’txt’ ⇒ 4
+#### ’pdf’ ⇒ 2
+. . .
+```bash
+#!/bin/bash
+
+if [ $# -eq 1 ]
+	then if [ -d $1 ]
+    then 
+      for fich in $1/*.*
+      do
+	if [ -f $fich ]
+	  then echo ${fich##*.} >> extensiones.aux
+	fi        
+      done
+      extensiones=$(sort < extensiones.aux | uniq)
+      for ext in $extensiones
+      do
+      	cont=0
+	for fich in $1/*.$ext
+	do
+	  cont=$(($cont+1))
+	done
+	echo "$ext => $cont"
+      done
+
+      rm extensiones.aux
+
+    else echo "No Existe"
+  fi
+  else echo "Parametros incorrectos"
+fi
+exit 0
+```
 
 
 
