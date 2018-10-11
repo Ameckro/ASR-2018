@@ -440,6 +440,8 @@ Cada linea tiene la siguiente estructura: root(nombre):pass(si x entonces la pas
 
 En el fichero ```/etc/shadow```, no solo contiene la contraseña, sino que tambien contiene cuando se creó la cuenta, si se le forzará cambiar la contraseña y cuando, si la cuenta caduca y cuando.   
 
+La variable de entorno ```FS``` es la variable file separator. Por defecto es el blanco ( " " )
+
 ___
 
 <a name="TablaComandos"/>
