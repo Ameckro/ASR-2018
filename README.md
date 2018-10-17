@@ -399,6 +399,17 @@ El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if coman
 
 ### Sistema de ficheros
 
+Comando         | Info
+---		| ---
+cat             |"concatenar" imprime el contenido de un fichero en la salida estandar concatenando (en caso de que hubiese), los ficheros pasados por los argumentos
+more		|muestra el contenido de un fichero pagina a pagina. El tamaño de dicha pagina, se delimita por el tamaño de la terminal (version primitiva -> version mas moderna: ```less```)
+less		|similar al comando ```more```pero con mas funcionalidades
+grep		|busca el contenido de un fichero en busca de lineas que contengan un patron. Si no se le especifica un fichero, lo busca en la entrada estandar
+wc		|cuenta el numero de lineas, palabras, y bytes de un fichero
+touch		|crea un fichero con el nombre pasado como parametro. Si ya existe, modifica la fecha de acceso
+rm		|borra un fichero (por defecto, no borra directorios)
+
+
 Permiso de escritura de un directorio es el permiso de borrado,creado o modificado de ficheros de ese directorio.
 
 Permiso de ejecucion del directorio es para hacer cd o para acceder a un subdirectorio de ese direcotrio.
