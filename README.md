@@ -1,5 +1,5 @@
 # ASR-2018
-- [Introducción a Shell Scripting](#IntroScripting)
+- [2: Introducción a Shell Scripting](#IntroScripting)
   - [Ejercicios](#Ej2)
     - [Pagina 9](#EjPag9)
     - [Pagina 15](#EjPag15)
@@ -8,9 +8,12 @@
   - [Redireccionamiento de Entrada/Salida](#RedireccionamientoES)
   - [Trabajando con el Bash](#Bash)
   - [Estructura de un Script](#EstructuraScript)
-- [Gestion de recursos](#TablaComandos)
-  - [Sistema de ficheros](#TablaComandos)
-- [Tabla de comandos](#TablaComandos)
+- [3: Gestion de recursos](#GestionRecursos)
+  - [Sistema de ficheros](#SisFich)
+  - [Entorno de trabajo](#EntTrabajo)
+  - [Cuentas, Grupos, Contabilidad](#CCC)
+  - [Procesos y Memoria](#ProcesosYMem)
+- [Anexo: Tabla de comandos](#TablaComandos)
 
 
 <a name="IntroScripting"/>
@@ -253,8 +256,6 @@ fi
 exit 0
 ```
 
-
-
 <a name="ConceptosBasicos"/>
 
 ### Conceptos basicos
@@ -342,6 +343,7 @@ Se puede ejecutar un script de 3 formas:
 - desde el direcorio actual ./ miScript.sh
 - configurando la variable de entrono PATH (```/home/user/bin/```): miScript.sh
 
+
 Podemos definir distintios tipos de variables: locales, de entorno, parametros.
 
 Una variable contiene una **cadena de caracteres**
@@ -389,6 +391,13 @@ El comando test permite evaluar expresiones condicionales
 El doble ampersan (```&&```) se utiliza para hacer un if: ``` comando1 && comando2 === if comando1 then comando2 ``` 
 El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if comando1 !=0 then comando2 ``` 
 
+<a name="GestionRecursos"/>
+
+## 3: Gestion de recursos
+
+<a name="SisFich"/>
+
+### Sistema de ficheros
 
 Permiso de escritura de un directorio es el permiso de borrado,creado o modificado de ficheros de ese directorio.
 
@@ -414,7 +423,11 @@ Un fichero ```core``` o de imagen, se genera cuando un programa aborta en modo d
 
 El comando ```find``` tiene una opcion que es ```-mtimpe``` : fecha de modificacion ```-atime```: fecha de ultimo acceso.                tiene una opcion para permisos ```mode```: exactamente ese, ```-mode``` solo los que estan a 1, ```/mode``` es un or de permisos. 
                       ```-o``` es un (or). Para poner un parentesis, se utiliza: ```\(``` y ```\)```. Para poner un ```;```, ponemos ```\;```
-                      
+
+<a name="EntTrabajo"/>
+
+### Entorno de trabajo	 
+
 El entorno tiene definida una serie de variables.
 La variable PATH varia entre usuarios (admin-root y entre los usuarios ). En la variable LD_LIBRARY_PATH, contiene una lista de librerias dinamica compiladas para los usuarios
 
@@ -434,6 +447,10 @@ Hay comandos, como el ```ls```, que usan un alias: ```alias ll='ls -al'```. Al e
 Los ficheros start-up (o scripts), son los fihceros que se ejecutan cuando se hace login o en algun caso, al instalar algun problema. Tienen extensiones (```csh```,```*rc*```, ). Cada usuario tiene un shell asociado. Este shell esta definido el el fichero ```passwd``` como ultimo argumento. Cada usuario puede modificar sus ficheros de start-up y puede añadir nuevas variables de entorno o nuevos alias
 
 Si un hijo, quiere modificar una variable de entorno del padre, usara ```.``` o el comando interno del bash ```source```
+
+<a name="CCC"/>
+
+### Cuentas, Grupos, Contabilidad
 
 El fichero clave del directorio ```/etc``` es el fichero passwd, que contiene los usuarios instalados (1 liena por comando). El SO tiene definidos otros usuarios internos.
 Cada linea tiene la siguiente estructura: root(nombre):pass(si x entonces la pass esta en el fichero ```/etc/shadow```):id:grupo principal: idgrupo
