@@ -409,6 +409,11 @@ wc		|cuenta el numero de lineas, palabras, y bytes de un fichero
 touch		|crea un fichero con el nombre pasado como parametro. Si ya existe, modifica la fecha de acceso
 rm		|borra un fichero (por defecto, no borra directorios)
 
+Comando         | Info
+---		| ---
+df		|muestra el espacio disponible en disco de las unidades montadas
+du		|resumen recursivo del uso del disco de los ficheros  del directorio pasado como parametro
+du -s		|resumen solo los ficheros del directorio pasado como parametro
 
 Permiso de escritura de un directorio es el permiso de borrado,creado o modificado de ficheros de ese directorio.
 
