@@ -13,6 +13,7 @@
   - [Entorno de trabajo](#EntTrabajo)
   - [Cuentas, Grupos, Contabilidad](#CCC)
   - [Procesos y Memoria](#ProcesosYMem)
+- [4: Arranque y parada. Procesos periódicos. Gestión del software](#ArranqueParada)
 - [Anexo: Tabla de comandos](#TablaComandos)
 
 
