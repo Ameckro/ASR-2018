@@ -475,6 +475,9 @@ En el fichero ```/etc/shadow```, no solo contiene la contraseña, sino que tambi
 
 La variable de entorno ```FS``` es la variable file separator. Por defecto es el blanco ( " " )
 Para redirigir un mensaje en la salida de errores: ```echo algo >&2```
+
+
+Al arrancar el sistema, se ejecuta la BIOS, cuyo objetivo es buscar el cargador del SO. La bios es parametizable. Por ejemplo, un parametro que podemos cambirar, es el orden de busqueda del cargador. En un servidor, la BIOS tiene que estar protegida con una contraseña. Si encuentra entre el orden establecido de los dispositvos conectados el cargador lo ejecuta. El cargador (o bootloader), inicia el sistema operativo y ejecuta el proceso ```vinit```. Dicho proceso es el encargado de poner en marcha todos los servicios del sistema. En el fichero ```/etc/inittab``` se indica que modo de arranque tiene el sistem. 0 -> halt, 1 -> single user(root), 2..5-> multi user, 6 reboot.
 ___
 
 <a name="TablaComandos"/>
