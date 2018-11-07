@@ -398,6 +398,13 @@ El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if coman
 
 <a name="SisFich"/>
 
+
+
+
+Total semanal, incremental diario.
+TAR: guarda tanto el contenido como la información asociada a las propriedades del archivo
+
+
 ### Sistema de ficheros
 
 Comando         | Info
