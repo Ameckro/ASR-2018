@@ -400,11 +400,6 @@ El ```||``` se utiliza para hacer un else: ``` comando1 || comando2 === if coman
 
 
 
-
-Total semanal, incremental diario.
-TAR: guarda tanto el contenido como la información asociada a las propriedades del archivo
-
-
 ### Sistema de ficheros
 
 Comando         | Info
@@ -493,6 +488,22 @@ La característica central de ```systemd```  es el (“Socket activation”), qu
 Procesos peridodicos:
 En el servidor cron, se lanzan procesos peridodicos (con frecuencias desde 1 minuto hasta 1 año). Se configura desde el fichero ```/etc/crontab``` cuyo acceso es solo del admin. Los usuarios pueden usar lanzar esas tareas y se puede restringir, qué usuarios puenden lanzarlas y cuales no, desde el fichero ```/etc/cron.allow``` y ```/etc/cron.deny```
 ___
+
+
+
+
+
+
+Total semanal, incremental diario.
+TAR: guarda tanto el contenido como la información asociada a las propriedades del archivo
+
+
+
+
+
+
+
+
 
 <a name="TablaComandos"/>
 
